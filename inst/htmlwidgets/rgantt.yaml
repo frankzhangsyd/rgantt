@@ -1,0 +1,8 @@
+dependencies:
+ - name: rgantt
+   version: 0.0.1
+   src: htmlwidgets/lib/sigma-1.0.3
+   script:
+    - frappe-gantt.min.js
+   stylesheet:
+    - frappe-gantt.css
