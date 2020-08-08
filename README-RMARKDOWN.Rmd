@@ -1,0 +1,63 @@
+---
+title: "Readme-rmarkdown"
+author: "Frank"
+date: "2020/8/8"
+output: md_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, results = "hide")
+```
+
+# rgantt 
+
+![](http://www.r-pkg.org/badges/version/rgantt)
+
+This package is to create a gantt chart(bar chart that illustrates a project schedule) with desired data.frame.
+
+This package can create an interactive gantt chart in R. It is a wrapper of Javascript library [Frappe Gantt](https://github.com/frappe/gantt)
+
+## Installation
+
+Dev version (Not on CRAN yet)
+
+``` r
+devtools::install_github("frankzhangsyd/rgantt") 
+```
+
+## Introduction
+
+Simply create a data frame with `id` `start` `end` `name` `progress` `dependecies` columns.
+Then pass this data frame into `rgantt()` function.
+
+```{r}
+df <- data.frame(
+  stringsAsFactors = FALSE,
+                id = c("Task 0","Task 1","Task 2",
+                       "Task 3","Task 4","Task 5","Task 6"),
+             start = c("2020-08-07","2020-08-08",
+                       "2020-08-08","2020-08-10","2020-08-14","2020-08-15",
+                       "2020-08-17"),
+               end = c("2020-08-14","2020-08-11",
+                       "2020-08-11","2020-08-13","2020-08-14","2020-08-16",
+                       "2020-08-17"),
+              name = c("Redesign website",
+                       "Write new content","Upgrade systeme","Apply new styles","Review",
+                       "Deploy","Go Live!"),
+          progress = c(37L, 75L, 75L, 23L, 21L, 61L, 32L),
+      dependencies = c(NA,"Task 0","Task 0",
+                       "Task 1, Task 2","Task 3",NA,"Task 5")
+)
+```
+
+The easiest way to start is copying code above and modify your version!
+
+```{r results="show"}
+knitr::kable(df)
+```
+
+```{r}
+library(rgantt)
+rgantt(df)
+```
+
