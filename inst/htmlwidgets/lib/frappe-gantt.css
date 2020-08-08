@@ -95,7 +95,7 @@
 
 .gantt-container {
   position: relative;
-  overflow: auto;
+  overflow: scroll;
   font-size: 12px; }
   .gantt-container .popup-wrapper {
     position: absolute;

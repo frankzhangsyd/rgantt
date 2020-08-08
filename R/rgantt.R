@@ -10,7 +10,7 @@
 #' @import htmlwidgets htmltools
 #'
 #' @export
-rgantt <- function(tasklist, width = NULL, height = NULL, elementId = NULL) {
+rgantt <- function(tasklist, width = 3600, height = 500, elementId = NULL) {
 
   # forward options using x
   x = list(
