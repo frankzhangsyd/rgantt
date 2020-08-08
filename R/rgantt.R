@@ -1,15 +1,20 @@
-#' <Add Title>
+#' Gantt chart
 #'
-#' <Add Description>
+#' Generate an interactive gantt chart
 #'
-#' @import htmlwidgets
+#' @param tasklist
+#' @param width
+#' @param height
+#' @param elementId
+#'
+#' @import htmlwidgets htmltools
 #'
 #' @export
-rgantt <- function(message, width = NULL, height = NULL, elementId = NULL) {
+rgantt <- function(tasklist, width = NULL, height = NULL, elementId = NULL) {
 
   # forward options using x
   x = list(
-    message = message
+    data = tasklist
   )
 
   # create widget
@@ -22,6 +27,11 @@ rgantt <- function(message, width = NULL, height = NULL, elementId = NULL) {
     elementId = elementId
   )
 }
+
+rgantt_html <- function(id, style, class, width, height, ...){
+  htmltools::tag("svg", list(id = id, class = class, width=width, height=height))
+}
+
 
 #' Shiny bindings for rgantt
 #'
