@@ -116,5 +116,16 @@ The easiest way to start is copying code above and modify your version!
 </tbody>
 </table>
 
+You can also pass the color code(ideally hex code) in the function. The
+default color is blue (“\#2490ef”).
+
     library(rgantt)
-    rgantt(df)
+    rgantt(df,barcolor = "#2490ef")
+
+![](example.jpg)
+
+You can also click the button below the chart to switch to different
+timeframes.
+
+The height and width are hardcodeed as `500` and `2500` as default. You
+may need to change the height and width to adjust the lookings.
