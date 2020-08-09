@@ -28,7 +28,7 @@ devtools::install_github("frankzhangsyd/rgantt")
 ## Introduction
 
 Simply create a data frame with `id` `start` `end` `name` `progress` `dependecies` columns.
-Then pass this data frame into `rgantt()` function.
+Then pass this data frame into `rgantt()` function. You can check out a demo over [here](https://www.ding-rui.org/rgantt-demo)
 
 ```{r}
 df <- data.frame(
@@ -52,7 +52,7 @@ df <- data.frame(
 
 The easiest way to start is copying code above and modify your version!
 
-```{r results="show"}
+```{r echo=FALSE, results="show"}
 knitr::kable(df)
 ```
 
