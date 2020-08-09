@@ -21,8 +21,8 @@ HTMLWidgets.widget({
 	     var button4 = '<button type="button" class="btn btn-sm btn-light active">Week</button>';
 	     var button5 = '<button type="button" class="btn btn-sm btn-light">Month</button>';
 
-	     $("#htmlwidget_container").append(button1,button2,button3,button4,button5);
-
+	     $(".gantt-container").append(button1,button2,button3,button4,button5);
+       $("#"+el.id).css("overflow","scroll");
        $(function() {
         $("button").click(function(){
             $btn = $(this);
