@@ -30,8 +30,11 @@ HTMLWidgets.widget({
             gantt.change_view_mode(mode);
             $btn.parent().find('button').removeClass('active');
             $btn.addClass('active');
+            $('.gantt .bar-progress').css('fill', x.barcolor);
         });
        });
+
+       $('.gantt .bar-progress').css('fill', x.barcolor);
 
 
 

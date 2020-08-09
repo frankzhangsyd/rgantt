@@ -10,11 +10,12 @@
 #' @import htmlwidgets htmltools
 #'
 #' @export
-rgantt <- function(tasklist, width = 3600, height = 500, elementId = NULL) {
+rgantt <- function(tasklist, barcolor = "#2490ef",width = 2500, height = 500, elementId = NULL) {
 
   # forward options using x
   x = list(
-    data = tasklist
+    data = tasklist,
+    barcolor = barcolor
   )
 
   # create widget
@@ -28,8 +29,8 @@ rgantt <- function(tasklist, width = 3600, height = 500, elementId = NULL) {
   )
 }
 
-rgantt_html <- function(id, style, class, width, height, ...){
-  htmltools::tag("svg", list(id = id, class = class, width=width, height=height))
+rgantt_html <- function(id,style,class,...){
+  htmltools::tag("svg", list(id = id,style=style,class=class,...))
 }
 
 
